@@ -530,10 +530,37 @@ footer {
 @keyframes modalclose {
   from {
     opacity: 1;
-    transform: translateY(-150px);
   }
   to {
     opacity: 0;
     transform: translateY(-150px);
   }
+}
+
+.valid-modal {
+    display: none;
+}
+.valid-modal-btn{
+  margin: auto;
+display: block;
+border: none;
+}
+
+.valid-massage {
+    text-align: center;
+}
+.MyClass{
+  opacity: 0;
+  transform: translateY(-150px);
+  transition: 1s ease;
+  position: absolute; visibility: hidden;
+  width: 53.7%;
+}
+
+.valid-modal{
+  opacity: 1;
+  position: absolute;
+  transform: translateY(0px);
+  width: 53.7%;
+  transition: 1s ease;
 }

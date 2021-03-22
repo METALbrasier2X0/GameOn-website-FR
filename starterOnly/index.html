@@ -17,7 +17,7 @@
       <img alt="logo" src="Logo.png" width="auto" height="auto" />
     </div>
     <div class="main-navbar">
-      
+
       <a href="#" class="active"><span>Accueil</span></a>
       <a href="#"><span>Détails de l'évènement</span></a>
       <a href="#"><span>À propos</span></a>
@@ -201,14 +201,28 @@
               </div>
               <input
                 class="btn-submit"
-                type="submit"
+                type="button"
                 class="button"
+                onclick="validate()"
                 value="C'est parti"
               />
             </form>
           </div>
         </div>
       </div>
+
+
+
+
+                            <div id="valid" class="valid-modal">
+                              <div class="content">
+                                <div class="modal-body">
+                                  <p class="valid-massage">Merci ! <br> Votre réservation a été enregisté.</p>
+                                  <button onclick="closeValidModal()" class="button valid-modal-btn">Fermer</button>
+                                </div>
+                              </div>
+                            </div>
+
     </main>
     <footer>
       <p class="copyrights">
@@ -216,5 +230,6 @@
       </p>
     </footer>
     <script src="modal.js"></script>
+    <script src="form.js"></script>
   </body>
 </html>
