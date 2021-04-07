@@ -27,8 +27,9 @@ function closeValidModal() {
 //Valid Confirm
 
 function validate() {
-  FirstNameValid();
-  LastNameValid();
+  FirstNameValid(firstName.value);
+  LastNameValid(lastName.value);
+  // ValeurConcours(quantity.value);
     console.log(firstName.value);
     console.log(lastName.value);
     console.log(email.value);
@@ -50,8 +51,8 @@ function validate() {
 
 //verifications functions
 
-function FirstNameValid(){
-  let input = firstName.value;
+function FirstNameValid(input){
+  var validityState_object = input.validity;
   if (input !== null && input.length >= 2){
   error = false;
   return this.error}
@@ -61,8 +62,7 @@ function FirstNameValid(){
   return this.error}
 };
 
-function LastNameValid(){
-  let input = lastName.value;
+function LastNameValid(input){
   if (input !== null && input.length >= 2){
   error = false;
   return this.error}
@@ -71,3 +71,13 @@ function LastNameValid(){
   error = true;
   return this.error}
 };
+
+// function ValeurConcours(input){
+//   if (isNaN(input)){
+//   alert("Veuillez entrer un chiffre.");
+//   error = true;
+//   return this.error}
+//   else {
+//   error = false;
+//   return this.error}
+// };
