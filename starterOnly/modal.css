@@ -226,6 +226,7 @@ font-size: 0.4em;
 color: #e54858;
 display: block;
 position: absolute;
+margin-bottom: -13px;
 text-align: right;
 opacity: 0;
 transition: 0.3s;}
@@ -235,7 +236,7 @@ transition: 0.3s;}
   color: #e54858;
   display: block;
   margin-top: 0px;
-  margin-bottom: 0px;
+  margin-bottom: -13px;
   text-align: left;
   line-height: 0.3;
   opacity: 1;
@@ -584,4 +585,16 @@ border: none;
   transform: translateY(0px);
   width: 53.7%;
   transition: 1s ease;
+}
+
+.input-error{
+  box-shadow: 1px 3px 12px 0px rgba(249,5,5,0.75);
+-webkit-box-shadow: 1px 3px 12px 0px rgba(249,5,5,0.75);
+-moz-box-shadow: 1px 3px 12px 0px rgba(249,5,5,0.75);
+margin: 0;
+padding: 8px;
+width: 100%;
+border-radius: 8px;
+font-size: 20px;
+height: 48px;
 }

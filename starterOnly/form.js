@@ -53,11 +53,15 @@ function validate() {
 function FirstNameValid(input){
   var validityState_object = input.validity;
   if (input !== null && input.length >= 2){
+    // firstName.setCustomValidity("");
+    firstName.className = "text-control";
     document.getElementById("errorname").className = "error";
-  document.getElementById('errorname').innerHTML="";
+    document.getElementById('errorname').innerHTML="";
   error = false;
   return this.error}
   else {
+  // firstName.setCustomValidity("Veuillez entrer 2 caractères ou plus pour le champ du Prénom.");
+  firstName.className = "input-error";
   document.getElementById("errorname").className = "error-show";
   document.getElementById('errorname').innerHTML="Veuillez entrer 2 caractères ou plus pour le champ du Prénom.";
   error = true;
@@ -66,11 +70,13 @@ function FirstNameValid(input){
 
 function LastNameValid(input){
   if (input !== null && input.length >= 2){
+    lastName.className = "text-control";
     document.getElementById("errorlast").className = "error";
   document.getElementById('errorlast').innerHTML="";
   error = false;
   return this.error}
   else {
+    lastName.className = "input-error";
     document.getElementById("errorlast").className = "error-show";
     document.getElementById('errorlast').innerHTML="Veuillez entrer 2 caractères ou plus pour le champ du Prénom.";
   error = true;
