@@ -588,9 +588,10 @@ border: none;
 }
 
 .input-error{
-  box-shadow: 1px 3px 12px 0px rgba(249,5,5,0.75);
+  border: 2px solid #c10909;
+  /* box-shadow: 1px 3px 12px 0px rgba(249,5,5,0.75);
 -webkit-box-shadow: 1px 3px 12px 0px rgba(249,5,5,0.75);
--moz-box-shadow: 1px 3px 12px 0px rgba(249,5,5,0.75);
+-moz-box-shadow: 1px 3px 12px 0px rgba(249,5,5,0.75); */
 margin: 0;
 padding: 8px;
 width: 100%;

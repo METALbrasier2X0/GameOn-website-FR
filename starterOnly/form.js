@@ -23,20 +23,17 @@ function closeValidModal() {
   document.getElementById("valid").className = "MyClass";
 };
 
-
 //Valid Confirm
 
 function validate() {
   FirstNameValid(firstName.value);
   LastNameValid(lastName.value);
-  // ValeurConcours(quantity.value);
-    console.log(firstName.value);
-    console.log(lastName.value);
-    console.log(email.value);
+  ValeurConcours(quantity.value);
+  emailChecked(email.value);
+  Birthdayvalid(birthdate.value)
+  RadioChecked();
+  CGChecked(checkboxInput);
     console.log(birthdate.value);
-    console.log(quantity.value);
-    console.log(locationRadio.value);
-    console.log(checkboxInput.value);
     if (error == false) {
       modalvalid.style.display = "block";
       modalbg.style.display = "none";
@@ -83,12 +80,77 @@ function LastNameValid(input){
   return this.error}
 };
 
-// function ValeurConcours(input){
-//   if (isNaN(input)){
-//   alert("Veuillez entrer un chiffre.");
-//   error = true;
-//   return this.error}
-//   else {
-//   error = false;
-//   return this.error}
-// };
+function ValeurConcours(input){
+  if (isNaN(input)){
+    quantity.className = "input-error";
+    document.getElementById("errornumber").className = "error-show";
+    document.getElementById('errornumber').innerHTML="Veuillez entrer un chiffre.";
+  error = true;
+  return this.error}
+  else {
+
+    quantity.className = "text-control";
+    document.getElementById("errornumber").className = "error";
+  document.getElementById('errornumber').innerHTML="";
+  error = false;
+  return this.error}
+};
+
+function validateEmail(email) {
+  const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return re.test(email);
+}
+
+function emailChecked(input){
+  if (validateEmail(input)){
+  document.getElementById("errormail").className = "error";
+  document.getElementById('errormail').innerHTML="";
+  error = false;
+  return this.error}
+  else {
+    document.getElementById("errormail").className = "error-show";
+    document.getElementById('errormail').innerHTML="Veuillez entrer un mail valide.";
+  error = true;
+  return this.error}
+};
+
+function Birthdayvalid(input){
+  if (input.length !== 0){
+  document.getElementById("errordate").className = "error";
+  document.getElementById('errordate').innerHTML="";
+  error = false;
+  return this.error}
+  else {
+    document.getElementById("errordate").className = "error-show";
+    document.getElementById('errordate').innerHTML="Veuillez entrer votre date de naissance.";
+  error = true;
+  return this.error}
+};
+
+function RadioChecked(){
+  for (var item of locationRadio) {
+    console.log(item)
+    if (item.checked == true){
+      document.getElementById("errorradio").className = "error";
+      document.getElementById('errorradio').innerHTML="";
+      error = false;
+      return this.error}
+      else {
+        document.getElementById("errorradio").className = "error-show";
+        document.getElementById('errorradio').innerHTML="Vous devez choisir une option.";
+      error = true;}
+};
+}
+
+function CGChecked(input){
+  if (input.checked == true){
+  document.getElementById("errorcg").className = "error";
+  document.getElementById('errorcg').innerHTML="";
+  error = false;
+  return this.error}
+  else {
+    document.getElementById("errorcg").className = "error-show";
+    document.getElementById('errorcg').innerHTML="Vous devez vérifier que vous acceptez les termes et conditions.";
+  error = true;
+  return this.error}
+};
