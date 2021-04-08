@@ -42,7 +42,6 @@ function validate() {
       modalbg.style.display = "none";
       document.getElementById("form").reset();
       return true
-
     }
     else {
       return false;
@@ -54,20 +53,26 @@ function validate() {
 function FirstNameValid(input){
   var validityState_object = input.validity;
   if (input !== null && input.length >= 2){
+    document.getElementById("errorname").className = "error";
+  document.getElementById('errorname').innerHTML="";
   error = false;
   return this.error}
   else {
-  alert("Veuillez entrer 2 caractères ou plus pour le champ du Prénom.");
+  document.getElementById("errorname").className = "error-show";
+  document.getElementById('errorname').innerHTML="Veuillez entrer 2 caractères ou plus pour le champ du Prénom.";
   error = true;
   return this.error}
 };
 
 function LastNameValid(input){
   if (input !== null && input.length >= 2){
+    document.getElementById("errorlast").className = "error";
+  document.getElementById('errorlast').innerHTML="";
   error = false;
   return this.error}
   else {
-  alert("Veuillez entrer 2 caractères ou plus pour le champ du Nom.");
+    document.getElementById("errorlast").className = "error-show";
+    document.getElementById('errorlast').innerHTML="Veuillez entrer 2 caractères ou plus pour le champ du Prénom.";
   error = true;
   return this.error}
 };

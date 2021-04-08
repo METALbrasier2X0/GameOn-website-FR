@@ -221,6 +221,27 @@ input {
   opacity: 0;
   transition: 0.3s;
 }
+.error{
+font-size: 0.4em;
+color: #e54858;
+display: block;
+position: absolute;
+text-align: right;
+opacity: 0;
+transition: 0.3s;}
+
+.error-show{
+  font-size: 0.4em;
+  color: #e54858;
+  display: block;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  text-align: left;
+  line-height: 0.3;
+  opacity: 1;
+  transition: 0.3s;}
+
+
 .formData[data-error-visible="true"]::after {
   opacity: 1;
 }
