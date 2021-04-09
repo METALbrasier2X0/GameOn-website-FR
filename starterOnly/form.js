@@ -33,7 +33,6 @@ function validate() {
   Birthdayvalid(birthdate.value)
   RadioChecked();
   CGChecked(checkboxInput);
-    console.log(birthdate.value);
     if (error == false) {
       modalvalid.style.display = "block";
       modalbg.style.display = "none";
@@ -103,11 +102,13 @@ function validateEmail(email) {
 
 function emailChecked(input){
   if (validateEmail(input)){
+  email.className = "text-control";
   document.getElementById("errormail").className = "error";
   document.getElementById('errormail').innerHTML="";
   error = false;
   return this.error}
   else {
+    email.className = "input-error";
     document.getElementById("errormail").className = "error-show";
     document.getElementById('errormail').innerHTML="Veuillez entrer un mail valide.";
   error = true;
@@ -116,11 +117,13 @@ function emailChecked(input){
 
 function Birthdayvalid(input){
   if (input.length !== 0){
+  birthdate.className = "text-control";
   document.getElementById("errordate").className = "error";
   document.getElementById('errordate').innerHTML="";
   error = false;
   return this.error}
   else {
+    birthdate.className = "input-error";
     document.getElementById("errordate").className = "error-show";
     document.getElementById('errordate').innerHTML="Veuillez entrer votre date de naissance.";
   error = true;
@@ -129,7 +132,6 @@ function Birthdayvalid(input){
 
 function RadioChecked(){
   for (var item of locationRadio) {
-    console.log(item)
     if (item.checked == true){
       document.getElementById("errorradio").className = "error";
       document.getElementById('errorradio').innerHTML="";

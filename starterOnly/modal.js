@@ -29,6 +29,20 @@ function launchModal() {
 
 // close modal form
 function closeModal() {
+
+  var elements_error = document.getElementsByClassName("error-show");
+
+  while(elements_error.length > 0){
+            elements_error[0].className = "error";
+        };
+
+var elements_input = document.getElementsByClassName("input-error");
+        while(elements_input.length > 0){
+                  elements_input[0].className = "text-control";
+};
+
   document.getElementById("form").reset();
   modalbg.style.display = "none";
 }
+
+// .className = "error";
