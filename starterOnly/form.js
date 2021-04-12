@@ -54,14 +54,12 @@ function validate() {
 function FirstNameValid(input, errors){
   var validityState_object = input.validity;
   if (input !== null && input.length >= 2){
-    // firstName.setCustomValidity("");
     firstName.className = "text-control";
     document.getElementById("errorname").className = "error";
     document.getElementById('errorname').innerHTML="";
   errors.push(true);
   return this.errors}
   else {
-  // firstName.setCustomValidity("Veuillez entrer 2 caractères ou plus pour le champ du Prénom.");
   firstName.className = "input-error";
   document.getElementById("errorname").className = "error-show";
   document.getElementById('errorname').innerHTML="Veuillez entrer 2 caractères ou plus pour le champ du Prénom.";
@@ -136,14 +134,22 @@ function Birthdayvalid(input, errors){
 
 function RadioChecked(errors){
   for (var item of locationRadio) {
+    console.log(item.id);
     if (item.checked == true){
       document.getElementById("errorradio").className = "error";
       document.getElementById('errorradio').innerHTML="";
       errors.push(true);
       return this.errors}
+
+      else if( item.checked == false && item.id == "location6" ){
+        document.getElementById("errorradio").className = "error-show";
+        document.getElementById('errorradio').innerHTML="Vous devez choisir une option.";
+        errors.push(false);
+        return this.errors;}
+
       else {
         document.getElementById("errorradio").className = "error-show";
-        document.getElementById('errorradio').innerHTML="Vous devez choisir une option.";;}
+        document.getElementById('errorradio').innerHTML="Vous devez choisir une option.";}
 };
 }
 
