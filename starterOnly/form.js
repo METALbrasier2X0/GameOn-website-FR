@@ -20,7 +20,8 @@ form.addEventListener('submit', handleForm);
 
 // close modal validation
 function closeValidModal() {
-  document.getElementById("valid").className = "MyClass";
+  document.getElementById("valid-content").style.display = "none";
+  document.getElementById("valid").style.display = "none";
 };
 
 //Valid Confirm
@@ -39,7 +40,8 @@ function validate() {
 
 
     if (final_value == true) {
-    modalvalid.style.display = "block";
+    document.getElementById("valid").style.display = "block";
+    document.getElementById("valid-content").style.display = "block";
     modalbg.style.display = "none";
     document.getElementById("form").reset();
     return true;
@@ -84,6 +86,12 @@ function LastNameValid(input, errors){
 
 function ValeurConcours(input, errors){
   if (isNaN(input)){
+    quantity.className = "input-error";
+    document.getElementById("errornumber").className = "error-show";
+    document.getElementById('errornumber').innerHTML="Veuillez entrer un chiffre.";
+  errors.push(false);
+  return this.errors}
+  else if (input.length == 0){
     quantity.className = "input-error";
     document.getElementById("errornumber").className = "error-show";
     document.getElementById('errornumber').innerHTML="Veuillez entrer un chiffre.";

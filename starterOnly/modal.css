@@ -516,17 +516,26 @@ footer {
   .hero-content .btn-signup {
     display: none;
   }
+
+  .error-show {
+    margin-top: 5px;
+    margin-bottom: 0px;
+  }
   .hero-headline {
-    font-size: 4.5rem;
-    white-space: normal;
+    font-size: 2em;
+white-space: normal;
+font-weight: 600;
+text-align: center;
   }
   .hero-text {
     width: unset;
-    font-size: 1.5rem;
+font-size: 0.8em;
+margin-top: 20px;
+text-align: center;
   }
   .hero-img img {
     border-radius: 10px;
-    margin-top: 40px;
+    margin-top: 20px;
   }
   .hero-section > .btn-signup {
     display: block;
@@ -562,14 +571,16 @@ footer {
 .valid-modal {
     display: none;
 }
-.valid-modal-btn{
-  margin: auto;
-display: block;
-border: none;
+.valid-modal-btn {
+    margin: auto;
+    display: block;
+    border: none;
+    padding: 15px 40px 15px 40px;
 }
 
 .valid-massage {
     text-align: center;
+    margin: 250px 0px 250px 0px;
 }
 .MyClass{
   opacity: 0;
@@ -583,8 +594,9 @@ border: none;
   opacity: 1;
   position: absolute;
   transform: translateY(0px);
-  width: 53.7%;
   transition: 1s ease;
+  margin: 5% auto;
+  width: 100%;
 }
 
 .input-error{
@@ -601,4 +613,10 @@ height: 48px;
 }
 #errordate{
   margin-bottom: 3px;
+}
+.topnav a.icon {
+    color: red;
+}
+a.icon:hover{
+  color: white;
 }

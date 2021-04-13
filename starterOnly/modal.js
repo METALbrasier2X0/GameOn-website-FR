@@ -43,6 +43,8 @@ var elements_input = document.getElementsByClassName("input-error");
 
   document.getElementById("form").reset();
   modalbg.style.display = "none";
+  document.getElementById("valid-content").style.display = "none";
+  document.getElementById("valid").style.display = "none";
 }
 
 // .className = "error";
